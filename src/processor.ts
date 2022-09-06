@@ -16,7 +16,7 @@ import * as config from './utils/config';
 
 const database = new TypeormDatabase();
 const processor = new SubstrateBatchProcessor()
-	.setBatchSize(1)
+	.setBatchSize(100)
 	.setBlockRange({ from: 1402610 })
 	// .setBlockRange({ from: 2395293 })
 	// .setDataSource({
@@ -129,15 +129,6 @@ async function handleEvmLog(ctx: EvmLogHandlerContext<Store>) {
 			erc721.events["Transfer(address,address,uint256)"].topic
 	) {
 		await erc721handleTransfer(ctx);
-	}
-
-	if (
-		contractAddress === config.BOX_ADDRESS &&
-		ctx.event.args.topics[0] ===
-			erc1155.events["TransferBatch(address,address,address,uint256[],uint256[])"].topic
-	) {
-		console.log('before event');
-		await erc1155handleMultiTransfer(ctx);
 	}
 
 	// if (

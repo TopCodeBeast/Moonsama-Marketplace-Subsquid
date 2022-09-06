@@ -162,13 +162,13 @@ export const metadatas = new EntitiesCache<Metadata>()
 
 export async function saveAll(db: Store): Promise<void> {
   await metadatas.saveAll(db)
-  await ERC721contracts.saveAll(db)
   await ERC721owners.saveAll(db)
+  await ERC721contracts.saveAll(db)
   await ERC721tokens.saveAll(db)
   await ERC721transfers.saveAll(db)
-  await ERC1155contracts.saveAll(db)
   await ERC1155owners.saveAll(db)
-  await ERC1155tokens.saveAll(db)
+  await ERC1155contracts.saveAll(db)
   await ERC1155tokenOwners.saveAll(db)
+  await ERC1155tokens.saveAll(db)
   await ERC1155transfers.saveAll(db)
 }
