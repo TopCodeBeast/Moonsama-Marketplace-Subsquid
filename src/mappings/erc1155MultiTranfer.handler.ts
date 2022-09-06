@@ -158,10 +158,9 @@ export async function erc1155handleMultiTransfer(
 		// if we mint tokens, we don't mark it
 		// total minted ever can be caluclated by totalSupply + burned amount
 
-		// if (oldOwner.id != '0x0000000000000000000000000000000000000000' ) {
-		// 	senderTokenOwner.balance =
-		// 		senderTokenOwner.balance - data.values[i].toBigInt();
-		// }
+		if (oldOwner.id != '0x0000000000000000000000000000000000000000' ) {
+			senderTokenOwner.balance -= data[4][i].toBigInt();
+		}
 
 		let recipientTokenOwnerId = data.to
 			.concat('-')

@@ -118,183 +118,12 @@ export const events = {
   ,
 }
 
-export type Burn0Function = ([account: string, id: ethers.BigNumber, value: ethers.BigNumber] & {account: string, id: ethers.BigNumber, value: ethers.BigNumber})
-
-export type BurnBatch0Function = ([account: string, ids: Array<ethers.BigNumber>, values: Array<ethers.BigNumber>] & {account: string, ids: Array<ethers.BigNumber>})
-
-export type Create0Function = ([_creator: string, _account: string, _id: ethers.BigNumber, _initialSupply: ethers.BigNumber, _maxSupply: ethers.BigNumber, _fractionalized: boolean, _data: string, _customUri: string, _fee: ([recipient: string, value: ethers.BigNumber] & {recipient: string, value: ethers.BigNumber})] & {_creator: string, _account: string, _id: ethers.BigNumber, _initialSupply: ethers.BigNumber, _maxSupply: ethers.BigNumber, _fractionalized: boolean, _data: string, _customUri: string, _fee: ([recipient: string, value: ethers.BigNumber] & {recipient: string, value: ethers.BigNumber})})
-
-export type CreatorGiveUpControl0Function = ([_id: ethers.BigNumber] & {_id: ethers.BigNumber})
-
-export type GrantRole0Function = ([role: string, account: string] & {role: string, account: string})
-
-export type Lock0Function = ([_id: ethers.BigNumber] & {_id: ethers.BigNumber})
-
-export type Mint0Function = ([_account: string, _id: ethers.BigNumber, _amount: ethers.BigNumber, _data: string] & {_account: string, _id: ethers.BigNumber, _amount: ethers.BigNumber, _data: string})
-
-export type MintBatch0Function = ([_account: string, _ids: Array<ethers.BigNumber>, _amounts: Array<ethers.BigNumber>, _data: string] & {_account: string, _ids: Array<ethers.BigNumber>, _amounts: Array<ethers.BigNumber>, _data: string})
-
-export type RenounceRole0Function = ([role: string, account: string] & {role: string, account: string})
-
-export type RevokeRole0Function = ([role: string, account: string] & {role: string, account: string})
-
-export type SafeBatchTransferFrom0Function = ([from: string, to: string, ids: Array<ethers.BigNumber>, amounts: Array<ethers.BigNumber>, data: string] & {from: string, to: string, ids: Array<ethers.BigNumber>, amounts: Array<ethers.BigNumber>, data: string})
-
-export type SafeTransferFrom0Function = ([from: string, to: string, id: ethers.BigNumber, amount: ethers.BigNumber, data: string] & {from: string, to: string, id: ethers.BigNumber, amount: ethers.BigNumber, data: string})
-
-export type SetApprovalForAll0Function = ([operator: string, approved: boolean] & {operator: string, approved: boolean})
-
-export type SetContractURI0Function = ([contractURI: string] & {contractURI: string})
-
-export type SetSecondarySaleFee0Function = ([_id: ethers.BigNumber, _fee: ([recipient: string, value: ethers.BigNumber] & {recipient: string, value: ethers.BigNumber})] & {_id: ethers.BigNumber, _fee: ([recipient: string, value: ethers.BigNumber] & {recipient: string, value: ethers.BigNumber})})
-
-export type SetTokenURI0Function = ([_id: ethers.BigNumber, newTokenURI: string] & {_id: ethers.BigNumber, newTokenURI: string})
-
-export type SetTokenURIPostfix0Function = ([tokenURIPostfix: string] & {tokenURIPostfix: string})
-
-export type SetTokenURIPrefix0Function = ([tokenURIPrefix: string] & {tokenURIPrefix: string})
-
-export type UpdateProxyRegistryAddress0Function = ([_proxyRegistryAddress: string] & {_proxyRegistryAddress: string})
-
 
 function decodeFunction(data: string): any {
   return abi.decodeFunctionData(data.slice(0, 10), data)
 }
 
 export const functions = {
-  "burn(address,uint256,uint256)": {
-    sighash: abi.getSighash("burn(address,uint256,uint256)"),
-    decode(input: string): Burn0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "burnBatch(address,uint256[],uint256[])": {
-    sighash: abi.getSighash("burnBatch(address,uint256[],uint256[])"),
-    decode(input: string): BurnBatch0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "create(address,address,uint256,uint256,uint256,bool,bytes,string,tuple)": {
-    sighash: abi.getSighash("create(address,address,uint256,uint256,uint256,bool,bytes,string,tuple)"),
-    decode(input: string): Create0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "creatorGiveUpControl(uint256)": {
-    sighash: abi.getSighash("creatorGiveUpControl(uint256)"),
-    decode(input: string): CreatorGiveUpControl0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "grantRole(bytes32,address)": {
-    sighash: abi.getSighash("grantRole(bytes32,address)"),
-    decode(input: string): GrantRole0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "lock(uint256)": {
-    sighash: abi.getSighash("lock(uint256)"),
-    decode(input: string): Lock0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "mint(address,uint256,uint256,bytes)": {
-    sighash: abi.getSighash("mint(address,uint256,uint256,bytes)"),
-    decode(input: string): Mint0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "mintBatch(address,uint256[],uint256[],bytes)": {
-    sighash: abi.getSighash("mintBatch(address,uint256[],uint256[],bytes)"),
-    decode(input: string): MintBatch0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "renounceRole(bytes32,address)": {
-    sighash: abi.getSighash("renounceRole(bytes32,address)"),
-    decode(input: string): RenounceRole0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "revokeRole(bytes32,address)": {
-    sighash: abi.getSighash("revokeRole(bytes32,address)"),
-    decode(input: string): RevokeRole0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)": {
-    sighash: abi.getSighash("safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)"),
-    decode(input: string): SafeBatchTransferFrom0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "safeTransferFrom(address,address,uint256,uint256,bytes)": {
-    sighash: abi.getSighash("safeTransferFrom(address,address,uint256,uint256,bytes)"),
-    decode(input: string): SafeTransferFrom0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setApprovalForAll(address,bool)": {
-    sighash: abi.getSighash("setApprovalForAll(address,bool)"),
-    decode(input: string): SetApprovalForAll0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setContractURI(string)": {
-    sighash: abi.getSighash("setContractURI(string)"),
-    decode(input: string): SetContractURI0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setSecondarySaleFee(uint256,tuple)": {
-    sighash: abi.getSighash("setSecondarySaleFee(uint256,tuple)"),
-    decode(input: string): SetSecondarySaleFee0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setTokenURI(uint256,string)": {
-    sighash: abi.getSighash("setTokenURI(uint256,string)"),
-    decode(input: string): SetTokenURI0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setTokenURIPostfix(string)": {
-    sighash: abi.getSighash("setTokenURIPostfix(string)"),
-    decode(input: string): SetTokenURIPostfix0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "setTokenURIPrefix(string)": {
-    sighash: abi.getSighash("setTokenURIPrefix(string)"),
-    decode(input: string): SetTokenURIPrefix0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
-  "updateProxyRegistryAddress(address)": {
-    sighash: abi.getSighash("updateProxyRegistryAddress(address)"),
-    decode(input: string): UpdateProxyRegistryAddress0Function {
-      return decodeFunction(input)
-    }
-  }
-  ,
 }
 
 interface ChainContext  {
@@ -364,14 +193,6 @@ export class Contract  {
     return this.call("balanceOfBatch", [accounts, ids])
   }
 
-  async cap(_id: ethers.BigNumber): Promise<ethers.BigNumber> {
-    return this.call("cap", [_id])
-  }
-
-  async contractURI(): Promise<string> {
-    return this.call("contractURI", [])
-  }
-
   async decimals(): Promise<number> {
     return this.call("decimals", [])
   }
@@ -404,10 +225,6 @@ export class Contract  {
     return this.call("isApprovedForAll", [_owner, _operator])
   }
 
-  async isProxy(_address: string, _operator: string): Promise<boolean> {
-    return this.call("isProxy", [_address, _operator])
-  }
-
   async maxSupply(_id: ethers.BigNumber): Promise<ethers.BigNumber> {
     return this.call("maxSupply", [_id])
   }
@@ -422,6 +239,18 @@ export class Contract  {
 
   async royaltyInfo(_tokenId: ethers.BigNumber, _salePrice: ethers.BigNumber): Promise<([receiver: string, royaltyAmount: ethers.BigNumber] & {receiver: string, royaltyAmount: ethers.BigNumber})> {
     return this.call("royaltyInfo", [_tokenId, _salePrice])
+  }
+
+  async isProxy(_address: string, _operator: string): Promise<boolean> {
+    return this.call("isProxy", [_address, _operator])
+  }
+
+  async cap(_id: ethers.BigNumber): Promise<ethers.BigNumber> {
+    return this.call("cap", [_id])
+  }
+
+  async contractURI(): Promise<string> {
+    return this.call("contractURI", [])
   }
 
   async secondarySaleFee(id: ethers.BigNumber): Promise<([recipient: string, value: ethers.BigNumber] & {recipient: string, value: ethers.BigNumber})> {
@@ -940,162 +769,6 @@ function getJsonAbi(): any {
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        }
-      ],
-      "name": "burn",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "ids",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "values",
-          "type": "uint256[]"
-        }
-      ],
-      "name": "burnBatch",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "cap",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "contractURI",
-      "outputs": [
-        {
-          "internalType": "string",
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_creator",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_initialSupply",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_maxSupply",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bool",
-          "name": "_fractionalized",
-          "type": "bool"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_data",
-          "type": "bytes"
-        },
-        {
-          "internalType": "string",
-          "name": "_customUri",
-          "type": "string"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address payable",
-              "name": "recipient",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct HasSecondarySaleFee.Fee",
-          "name": "_fee",
-          "type": "tuple"
-        }
-      ],
-      "name": "create",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "creatorGiveUpControl",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "decimals",
       "outputs": [
@@ -1178,24 +851,6 @@ function getJsonAbi(): any {
           "type": "address"
         }
       ],
-      "name": "grantRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
       "name": "hasRole",
       "outputs": [
         {
@@ -1260,43 +915,6 @@ function getJsonAbi(): any {
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_operator",
-          "type": "address"
-        }
-      ],
-      "name": "isProxy",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        }
-      ],
-      "name": "lock",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "uint256",
           "name": "_id",
           "type": "uint256"
@@ -1311,62 +929,6 @@ function getJsonAbi(): any {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_data",
-          "type": "bytes"
-        }
-      ],
-      "name": "mint",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_account",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "_ids",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "_amounts",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "bytes",
-          "name": "_data",
-          "type": "bytes"
-        }
-      ],
-      "name": "mintBatch",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1393,42 +955,6 @@ function getJsonAbi(): any {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "renounceRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "role",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        }
-      ],
-      "name": "revokeRole",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1464,66 +990,56 @@ function getJsonAbi(): any {
       "inputs": [
         {
           "internalType": "address",
-          "name": "from",
+          "name": "_address",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "to",
+          "name": "_operator",
           "type": "address"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "ids",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "amounts",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
         }
       ],
-      "name": "safeBatchTransferFrom",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "isProxy",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
           "internalType": "uint256",
-          "name": "id",
+          "name": "_id",
           "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bytes",
-          "name": "data",
-          "type": "bytes"
         }
       ],
-      "name": "safeTransferFrom",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "cap",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "contractURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -1555,111 +1071,6 @@ function getJsonAbi(): any {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "approved",
-          "type": "bool"
-        }
-      ],
-      "name": "setApprovalForAll",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "contractURI",
-          "type": "string"
-        }
-      ],
-      "name": "setContractURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address payable",
-              "name": "recipient",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct HasSecondarySaleFee.Fee",
-          "name": "_fee",
-          "type": "tuple"
-        }
-      ],
-      "name": "setSecondarySaleFee",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "newTokenURI",
-          "type": "string"
-        }
-      ],
-      "name": "setTokenURI",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "tokenURIPostfix",
-          "type": "string"
-        }
-      ],
-      "name": "setTokenURIPostfix",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "tokenURIPrefix",
-          "type": "string"
-        }
-      ],
-      "name": "setTokenURIPrefix",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -1771,19 +1182,6 @@ function getJsonAbi(): any {
         }
       ],
       "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_proxyRegistryAddress",
-          "type": "address"
-        }
-      ],
-      "name": "updateProxyRegistryAddress",
-      "outputs": [],
-      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
